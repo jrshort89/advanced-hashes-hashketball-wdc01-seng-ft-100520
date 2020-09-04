@@ -167,3 +167,15 @@ end
 def team_names
   [game_hash[:home][:team_name], game_hash[:away][:team_name]]
 end
+
+def player_numbers(name)
+  team = []
+  team_nums = []
+  if home = game_hash[:home][:team_name] == name
+    team = game_hash[:home][:players]
+  else
+    team = game_hash[:away][:players]
+  end
+  team.each { |x| team_nums << x[:number]}
+  team_nums
+end

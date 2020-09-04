@@ -188,3 +188,18 @@ def player_stats(name)
     end
   }
 end
+
+def big_shoe_rebounds(name)
+  biggest = 0
+  rebound = 0
+  teams = game_hash[:home][:players].concat(game_hash[:away][:players])
+  teams.each { |x|
+    if x[:player_name] == name
+      if x[:shoe] > biggest
+        biggest = x[:shoe]
+        rebound = x[:rebounds]
+      end
+    end
+  }
+  rebound
+end

@@ -129,5 +129,9 @@ end
 # Write code here
 
 def num_points_scored(name)
-  if name[:home][]
+  game_hash[:home][:players].each { |key|
+    if key[:player_name] == name
+          return key[:points]
+    end
+  }
 end

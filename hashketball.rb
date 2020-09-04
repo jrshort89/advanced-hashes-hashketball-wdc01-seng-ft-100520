@@ -184,7 +184,6 @@ def player_stats(name)
   teams = game_hash[:home][:players].concat(game_hash[:away][:players])
   teams.each { |x|
     if x[:player_name] == name
-      x.delete(:player_name)
       return x
     end
   }
